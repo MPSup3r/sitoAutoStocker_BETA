@@ -517,3 +517,23 @@ ul { margin-left: 25px; margin-top: 25px; }
     background: #2997ff;
     color: white;
 }
+
+/* =========================================
+   FLIP CARD LOCOMOZIONE
+   ========================================= */
+.locomotion-flip-card {
+    height: 320px; /* Altezza ottimizzata per il testo */
+}
+
+.locomotion-back-content {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.locomotion-back-content p {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    line-height: 1.6;
