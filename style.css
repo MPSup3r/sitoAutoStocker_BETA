@@ -52,7 +52,13 @@ nav {
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--nav-border);
     z-index: 1000;
-    transition: background-color 0.5s ease, border-color 0.5s ease;
+    /* Aggiunta la transizione per il transform (movimento) */
+    transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.3s ease-in-out;
+}
+
+/* Nuova classe che spinge la navbar fuori dallo schermo verso l'alto */
+.nav-hidden {
+    transform: translateY(-100%);
 }
 
 .nav-content {
@@ -180,12 +186,20 @@ ul { margin-left: 25px; margin-top: 25px; }
 .team-member h3 { font-size: 1.5rem; margin-bottom: 5px; color: var(--text-primary); }
 
 .team-role { 
-    font-size: 0.95rem; font-weight: 600; color: #0066cc; 
-    margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px;
+    font-size: 0.8rem; /* Ruolo rimpicciolito */
+    font-weight: 700; 
+    color: #0066cc; 
+    margin-bottom: 10px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.8px;
 }
 [data-theme="dark"] .team-role { color: #2997ff; }
 
-.team-bio { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; }
+.team-bio { 
+    font-size: 1rem; /* Descrizione ingrandita */
+    color: var(--text-secondary); 
+    line-height: 1.5; 
+}
 .outro-text { margin-top: 70px; font-size: 1em; opacity: 0.8; max-width: 800px; margin-left: auto; margin-right: auto;}
 
 
