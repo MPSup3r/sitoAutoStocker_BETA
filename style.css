@@ -263,8 +263,12 @@ ul { margin-left: 25px; margin-top: 25px; }
 
 .team-photo {
     width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
-    margin-bottom: 20px; border: 4px solid var(--bg-color); box-shadow: var(--shadow-sm);
+    margin-bottom: 20px; 
+    border: 4px solid #0066cc; /* Bordo blu chiaro */
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.3s ease;
 }
+[data-theme="dark"] .team-photo { border-color: #2997ff; } /* Bordo blu elettrico in dark mode */
 
 .team-member h3 { font-size: 1.5rem; margin-bottom: 5px; color: var(--text-primary); }
 
@@ -460,4 +464,56 @@ ul { margin-left: 25px; margin-top: 25px; }
 
 .site-footer a:hover {
     text-decoration: underline;
+}
+
+/* =========================================
+   FLIP CARD TEAM E BOTTONI SOCIAL
+   ========================================= */
+.team-flip-card {
+    height: 420px; /* Leggermente più alta per far stare bene foto e testi */
+}
+
+.team-back-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(0, 102, 204, 0.1);
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 102, 204, 0.3);
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    background: #0066cc;
+    color: white;
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .social-btn {
+    background: rgba(41, 151, 255, 0.1);
+    color: #2997ff;
+    border-color: rgba(41, 151, 255, 0.3);
+}
+
+[data-theme="dark"] .social-btn:hover {
+    background: #2997ff;
+    color: white;
 }
