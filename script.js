@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         // Sincronizza lo stato della checkbox con il tema
-        themeCheckbox.checked = (theme === 'dark');
+        if(themeCheckbox) themeCheckbox.checked = (theme === 'dark');
     }
 
     const savedTheme = localStorage.getItem('theme');
@@ -19,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Ascolta il cambio di stato dello switch
-    themeCheckbox.addEventListener('change', (e) => {
-        setTheme(e.target.checked ? 'dark' : 'light');
-    });
+    if(themeCheckbox) {
+        themeCheckbox.addEventListener('change', (e) => {
+            setTheme(e.target.checked ? 'dark' : 'light');
+        });
+    }
 
     prefersDarkScheme.addEventListener('change', (e) => {
         if (!localStorage.getItem('theme')) {
