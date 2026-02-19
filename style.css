@@ -537,3 +537,5 @@ ul { margin-left: 25px; margin-top: 25px; }
     font-size: 1.05rem;
     color: var(--text-primary);
     line-height: 1.6;
+    margin: 0;
+}
