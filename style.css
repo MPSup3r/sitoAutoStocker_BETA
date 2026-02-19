@@ -196,47 +196,51 @@ ul { margin-left: 25px; margin-top: 25px; }
 .outro-text { margin-top: 50px; font-size: 1em; opacity: 0.8; max-width: 800px; margin-left: auto; margin-right: auto;}
 
 /* =========================================
-   ANIMAZIONI CSS (Il cuore del moderno)
+   ANIMAZIONI CSS (FIXATE)
    ========================================= */
 
-/* Stato iniziale degli elementi animabili: nascosti e spostati */
-.animate-block, .stagger-box > * {
+/* 1. Stato iniziale: elementi nascosti e pronti ad animarsi */
+.animate-block {
     opacity: 0;
-    /* Verrà sovrascritto dall'animazione specifica, ma è un buon fallback */
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stagger-box > * {
+    opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Quando JS aggiunge la classe .is-visible, resetta lo stato */
-.is-visible {
+/* 2. Direzioni personalizzate per le animazioni */
+[data-animation="fadeUp"] { transform: translateY(40px); }
+[data-animation="scaleIn"] { transform: scale(0.9); }
+[data-animation="slideRight"] { transform: translateX(-50px); }
+[data-animation="slideLeft"] { transform: translateX(50px); }
+
+/* Delay manuale per singoli elementi */
+[data-delay="300"] { transition-delay: 0.3s; }
+[data-delay="500"] { transition-delay: 0.5s; }
+
+/* 3. STATO VISIBILE: Quando l'utente scorre e JS interviene */
+.animate-block.is-visible {
     opacity: 1 !important;
     transform: translateY(0) scale(1) translateX(0) !important;
 }
 
-/* Ritardi per gli elementi in sequenza (stagger) */
-/* Seleziona i figli diretti di .stagger-box e applica ritardi crescenti */
+/* FIX: Ora diciamo esplicitamente ai FIGLI della stagger box di apparire */
+.stagger-box.is-visible > * {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) translateX(0) !important;
+}
+
+/* 4. Effetto cascata (stagger) per le liste e le card */
 .stagger-box.is-visible > *:nth-child(1) { transition-delay: 0.1s; }
 .stagger-box.is-visible > *:nth-child(2) { transition-delay: 0.2s; }
 .stagger-box.is-visible > *:nth-child(3) { transition-delay: 0.3s; }
 .stagger-box.is-visible > *:nth-child(4) { transition-delay: 0.4s; }
-
-/* Definizioni specifiche delle animazioni (usate tramite attributo data-animation in HTML) */
-
-/* Fade Up: Dal basso verso l'alto */
-[data-animation="fadeUp"] { transform: translateY(40px); }
-
-/* Scale In: Da piccolo a normale */
-[data-animation="scaleIn"] { transform: scale(0.9); }
-
-/* Slide In: Dai lati */
-[data-animation="slideRight"] { transform: translateX(-50px); }
-[data-animation="slideLeft"] { transform: translateX(50px); }
-
-/* Delay manuale tramite attributo data-delay (utile per elementi singoli) */
-[data-delay="300"] { transition-delay: 0.3s; }
-[data-delay="500"] { transition-delay: 0.5s; }
-
+.stagger-box.is-visible > *:nth-child(5) { transition-delay: 0.5s; }
 
 /* --- Media Queries per Mobile --- */
 @media (max-width: 768px) {
