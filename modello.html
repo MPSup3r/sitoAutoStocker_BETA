@@ -36,13 +36,20 @@
             
             <div class="model-container">
                 <model-viewer 
+                    id="robot-viewer"
                     src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
                     auto-rotate 
                     camera-controls 
-                    disable-zoom 
                     shadow-intensity="1">
+                    
+                    <div class="custom-controls">
+                        <button id="zoom-out" class="control-btn" aria-label="Zoom Out">-</button>
+                        <button id="zoom-in" class="control-btn" aria-label="Zoom In">+</button>
+                    </div>
                 </model-viewer>
             </div>
+            <p class="model-hint">🖱️ <strong>Trascina</strong> per ruotare &nbsp;|&nbsp; 🔍 Usa i <strong>bottoni</strong> o la <strong>rotellina</strong> per lo zoom</p>
+            
             <div style="margin-top: 40px;">
                 <a href="index.html" style="color: #0066cc; text-decoration: none; font-weight: 600;">&larr; Torna alla pagina principale</a>
             </div>
