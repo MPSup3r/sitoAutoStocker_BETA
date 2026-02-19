@@ -65,7 +65,10 @@ nav {
     max-width: 1200px; margin: 0 auto; padding: 15px 25px;
 }
 
-.logo { font-weight: 700; font-size: 1.3rem; letter-spacing: 0.5px; }
+.logo { 
+    font-weight: 700; font-size: 1.3rem; letter-spacing: 0.5px; 
+    text-decoration: none; color: var(--text-primary); cursor: pointer; 
+}
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a {
