@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTheme(prefersDarkScheme.matches ? 'dark' : 'light');
     }
 
-    // Ascolta il cambio di stato dello switch
     if(themeCheckbox) {
         themeCheckbox.addEventListener('change', (e) => {
             setTheme(e.target.checked ? 'dark' : 'light');
@@ -31,7 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Animazioni allo Scroll ---
+    // --- Smart Navbar (Nascondi giù, Mostra su) ---
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Se scorri verso il basso e superi i primi 80px
+        if (scrollTop > lastScrollTop && scrollTop > 80) {
+            navbar.classList.add('nav-hidden');
+        } else {
+            // Se scorri verso l'alto
+            navbar.classList.remove('nav-hidden');
+        }
+        lastScrollTop = scrollTop;
+    });
+
+    // --- Animazioni allo Scroll (Intersection Observer) ---
     const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
     const observerCallback = (entries, observer) => {
