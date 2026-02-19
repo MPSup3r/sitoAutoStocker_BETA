@@ -167,6 +167,87 @@ ul { margin-left: 25px; margin-top: 25px; }
 .card p { color: var(--text-secondary); margin-bottom: 0; }
 .hover-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: var(--shadow-hover); background-color: var(--bg-color); }
 
+/* =========================================
+   EFFETTO 3D FLIP CARDS (Sezione Software)
+   ========================================= */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* Determina la profondità del 3D */
+    height: 380px; /* Altezza fissa per gestire la rotazione */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d; /* Mantiene gli elementi figli nello spazio 3D */
+}
+
+/* Quando il mouse passa sopra, ruota di 180 gradi */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Base condivisa tra Fronte e Retro per l'effetto Vetro (Glassmorphism) */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Nasconde il retro su Safari */
+    backface-visibility: hidden;         /* Nasconde il retro sugli altri browser */
+    border-radius: 24px;
+    
+    /* Stili ereditati dalle card standard per mantenere il design */
+    background-color: var(--card-bg);
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-sm);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* Personalizzazione del Fronte */
+.flip-card-front {
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.flip-card-front h3 { margin-bottom: 10px; font-size: 1.6rem; color: var(--text-primary); }
+.flip-card-front p { color: var(--text-secondary); margin-bottom: 0; font-weight: 500;}
+
+/* Personalizzazione del Retro */
+.flip-card-back {
+    transform: rotateY(180deg); /* Questo elemento parte già girato */
+    justify-content: flex-start;
+    overflow: hidden; /* Fondamentale per far tagliare l'immagine in alto nei bordi curvi */
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.back-content {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Occupa lo spazio rimanente sotto l'immagine */
+}
+
+.back-content p {
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin: 0;
+}
+
 /* --- Sezione Team (Testi Invertiti) --- */
 .team-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;
