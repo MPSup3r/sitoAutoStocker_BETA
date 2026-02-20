@@ -119,3 +119,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleziona tutte le sezioni che hanno un ID e i link della navbar che puntano a un ID
+    const sections = document.querySelectorAll('section[id], div[id]'); 
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+
+        // Controlla la posizione di ogni sezione rispetto allo scroll
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            // Il "- 150" serve a far scattare l'evidenziazione un po' prima che la sezione arrivi in cima
+            if (scrollY >= (sectionTop - 150)) {
+                currentId = section.getAttribute('id');
+            }
+        });
+
+        // Rimuove la classe attiva da tutti i link e la aggiunge solo a quello corrente
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentId}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
