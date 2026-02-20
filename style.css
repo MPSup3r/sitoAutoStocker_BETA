@@ -56,6 +56,14 @@ nav {
     transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.3s ease-in-out;
 }
 
+/* Modifica visiva per il link attivo nella navbar */
+nav a.active {
+    color: #ff9800 !important; /* Colore arancione del tema, puoi cambiarlo */
+    font-weight: bold;
+    border-bottom: 2px solid #ff9800; 
+    transition: all 0.3s ease;
+}
+
 .nav-hidden {
     transform: translateY(-100%); /* Nasconde la barra verso l'alto */
 }
