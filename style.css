@@ -548,63 +548,32 @@ ul { margin-left: 25px; margin-top: 25px; }
     margin: 0;
 }
 
-/* --- Bottone Modello 3D staccato (Home) --- */
-.standalone-cta {
-    position: relative;
-    z-index: 10; /* Essenziale per renderlo cliccabile sopra il modello 3D */
-    margin-top: 8vh; /* Lo spinge verso il basso, separandolo nettamente dal titolo */
-    text-align: center;
-    background: var(--glass-panel-bg);
-    padding: 15px 30px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--card-border);
-    box-shadow: var(--shadow-sm);
-}
-
-.standalone-cta p {
+/* --- Link Minimal Modello 3D (Home) --- */
+.minimal-3d-link {
+    position: absolute; 
+    bottom: 40px; /* Lo ancora in fondo alla pagina, lontano dal titolo */
+    z-index: 10; /* Fondamentale per renderlo cliccabile sopra il canvas 3D */
     font-size: 0.95rem;
-    margin-bottom: 12px;
-    color: var(--text-secondary);
-}
-
-.btn-primary {
-    display: inline-block;
-    background-color: #ff9800; /* Arancione stile AUTOSTOKER */
-    color: #ffffff !important;
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-weight: 500;
+    color: var(--text-secondary); /* Usa il grigio chiaro del tuo tema */
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px; /* Crea un'area cliccabile comoda senza sfondi visibili */
+    transition: color 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: #e68a00;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.6);
-}
-
-.btn-primary {
-    display: inline-block;
-    background-color: #ff9800; /* Colore di accento */
-    color: #ffffff !important;
-    padding: 12px 28px;
-    border-radius: 30px;
+.minimal-3d-link span {
+    transition: transform 0.3s ease;
     font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
-    position: relative;
-    z-index: 10; /* Fondamentale per renderlo cliccabile sopra il modello 3D */
 }
 
-.btn-primary:hover {
-    background-color: #e68a00;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.6);
+/* Effetto hover: si colora di arancione e la freccia si sposta a destra */
+.minimal-3d-link:hover {
+    color: #ff9800; 
+}
+
+.minimal-3d-link:hover span {
+    transform: translateX(4px); 
 }
