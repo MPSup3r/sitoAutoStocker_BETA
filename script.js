@@ -120,29 +120,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// =========================================
+// SMART NAVBAR HIGHLIGHT (SCROLLSPY FIX)
+// =========================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleziona tutte le sezioni che hanno un ID e i link della navbar che puntano a un ID
-    const sections = document.querySelectorAll('section[id], div[id]'); 
-    const navLinks = document.querySelectorAll('nav ul li a');
+    const sections = document.querySelectorAll('section[id]'); 
+    const navLinks = document.querySelectorAll('.nav-links a');
 
     window.addEventListener('scroll', () => {
         let currentId = '';
+        const scrollPosition = window.scrollY;
 
-        // Controlla la posizione di ogni sezione rispetto allo scroll
+        // Se siamo in cima alla pagina, rimuovi tutti gli highlight
+        if (scrollPosition < 100) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            return;
+        }
+
+        // Trova la sezione attualmente visibile
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+            const sectionHeight = section.offsetHeight;
             
-            // Il "- 150" serve a far scattare l'evidenziazione un po' prima che la sezione arrivi in cima
-            if (scrollY >= (sectionTop - 150)) {
+            // Se lo scroll è arrivato alla sezione (con 250px di anticipo per attivazione fluida)
+            if (scrollPosition >= (sectionTop - 250) && scrollPosition < (sectionTop + sectionHeight)) {
                 currentId = section.getAttribute('id');
             }
         });
 
-        // Rimuove la classe attiva da tutti i link e la aggiunge solo a quello corrente
+        // Applica la classe 'active' solo al link corretto
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentId}`) {
+            if (currentId && link.getAttribute('href') === `#${currentId}`) {
                 link.classList.add('active');
             }
         });
