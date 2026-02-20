@@ -548,24 +548,20 @@ ul { margin-left: 25px; margin-top: 25px; }
     margin: 0;
 }
 /* --- Link Minimal Modello 3D (Home) --- */
+/* --- Link Minimal Modello 3D (Home) --- */
 .minimal-3d-link {
     position: absolute; 
-    bottom: 15px; /* Spostato ancora più in basso (prima era 40px) */
+    bottom: 15px; 
     z-index: 10; 
     font-size: 0.95rem;
-    font-weight: 500;
-    color: #0066cc; /* Blu istituzionale (tema chiaro) */
+    font-weight: 600; 
+    color: #007aff !important; /* FORZATURA BLU ACCESO */
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 6px;
     padding: 10px 20px;
     transition: all 0.3s ease;
-}
-
-/* Adattamento per la Dark Mode */
-[data-theme="dark"] .minimal-3d-link {
-    color: #2997ff; /* Blu elettrico per risaltare sul nero */
 }
 
 .minimal-3d-link span {
@@ -575,9 +571,9 @@ ul { margin-left: 25px; margin-top: 25px; }
 
 /* Effetti Hover */
 .minimal-3d-link:hover {
-    opacity: 0.8; /* Leggero feedback visivo al passaggio del mouse */
+    opacity: 0.7; 
 }
 
 .minimal-3d-link:hover span {
-    transform: translateX(4px); /* Anima la freccia verso destra */
+    transform: translateX(4px); 
 }
