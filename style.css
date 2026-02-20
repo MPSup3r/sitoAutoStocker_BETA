@@ -547,21 +547,25 @@ ul { margin-left: 25px; margin-top: 25px; }
     line-height: 1.6;
     margin: 0;
 }
-
 /* --- Link Minimal Modello 3D (Home) --- */
 .minimal-3d-link {
     position: absolute; 
-    bottom: 40px; /* Lo ancora in fondo alla pagina, lontano dal titolo */
-    z-index: 10; /* Fondamentale per renderlo cliccabile sopra il canvas 3D */
+    bottom: 15px; /* Spostato ancora più in basso (prima era 40px) */
+    z-index: 10; 
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-secondary); /* Usa il grigio chiaro del tuo tema */
+    color: #0066cc; /* Blu istituzionale (tema chiaro) */
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 10px 20px; /* Crea un'area cliccabile comoda senza sfondi visibili */
-    transition: color 0.3s ease;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Adattamento per la Dark Mode */
+[data-theme="dark"] .minimal-3d-link {
+    color: #2997ff; /* Blu elettrico per risaltare sul nero */
 }
 
 .minimal-3d-link span {
@@ -569,11 +573,11 @@ ul { margin-left: 25px; margin-top: 25px; }
     font-size: 1.1rem;
 }
 
-/* Effetto hover: si colora di arancione e la freccia si sposta a destra */
+/* Effetti Hover */
 .minimal-3d-link:hover {
-    color: #ff9800; 
+    opacity: 0.8; /* Leggero feedback visivo al passaggio del mouse */
 }
 
 .minimal-3d-link:hover span {
-    transform: translateX(4px); 
+    transform: translateX(4px); /* Anima la freccia verso destra */
 }
