@@ -1,74 +1,66 @@
-# sitoAutoStocker (BETA) 🚀
+# AUTOSTOKER 🤖📦
 
-[![Status](https://img.shields.io/badge/Status-BETA-orange.svg)](https://github.com/MPSup3r/sitoAutoStocker_BETA)
+[![Status](https://img.shields.io/badge/Project-BETA-orange.svg)](https://mpsup3r.github.io/sitoAutoStocker_BETA/)
+[![School](https://img.shields.io/badge/School-IIS%20Torricelli%20Milano-blue.svg)](https://www.torricellimi.edu.it/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**sitoAutoStocker** è una piattaforma web in fase di sviluppo (BETA) progettata per l'automazione e il monitoraggio delle scorte (stock). Il sistema punta a semplificare la gestione degli inventari attraverso un'interfaccia intuitiva e strumenti di aggiornamento automatico.
+**AUTOSTOKER** è un prototipo di robot mobile intelligente progettato per l'automazione industriale sostenibile. Il progetto integra meccanica avanzata, elettronica di precisione e una piattaforma software dedicata per il monitoraggio e il controllo remoto.
 
-## 📌 Caratteristiche principali
-
-* **Monitoraggio in tempo reale:** Visualizzazione immediata dello stato delle scorte.
-* **Gestione Automatica:** Logica integrata per il controllo dei livelli di magazzino.
-* **Interfaccia Responsive:** Accessibile da desktop, tablet e smartphone.
-* **Pannello Admin:** Area dedicata per la configurazione dei prodotti e degli utenti.
-* *(Aggiungi qui altre feature specifiche, es: Notifiche Telegram, Export Excel, etc.)*
-
-## 🛠️ Tecnologie utilizzate
-
-* **Frontend:** HTML5, CSS3 (Bootstrap/Tailwind), JavaScript.
-* **Backend:** [Inserisci qui, es: Node.js / PHP / Python]
-* **Database:** [Inserisci qui, es: MySQL / MongoDB]
-* **Strumenti:** Git, GitHub per il versioning.
-
-## 🚀 Installazione
-
-Segui questi passaggi per configurare l'ambiente di sviluppo in locale:
-
-1.  **Clona la repository:**
-    ```bash
-    git clone [https://github.com/MPSup3r/sitoAutoStocker_BETA.git](https://github.com/MPSup3r/sitoAutoStocker_BETA.git)
-    ```
-
-2.  **Entra nella cartella del progetto:**
-    ```bash
-    cd sitoAutoStocker_BETA
-    ```
-
-3.  **Installa le dipendenze:**
-    *(Esempio per Node.js - modifica se necessario)*
-    ```bash
-    npm install
-    ```
-
-4.  **Configurazione Ambiente:**
-    Copia il file `.env.example` in `.env` e inserisci le tue credenziali (DB, API Keys, etc.).
-
-5.  **Avvia l'applicazione:**
-    ```bash
-    npm start
-    ```
-
-## 📈 Roadmap (Stato Beta)
-
-- [x] Sviluppo interfaccia base.
-- [x] Integrazione database.
-- [ ] Implementazione sistema di notifiche automatiche.
-- [ ] Test di sicurezza e ottimizzazione performance.
-- [ ] Rilascio versione 1.0 Stable.
-
-## 🤝 Contribuire
-
-Essendo in fase **BETA**, i suggerimenti e le segnalazioni di bug sono i benvenuti! 
-
-1. Apri una [Issue](https://github.com/MPSup3r/sitoAutoStocker_BETA/issues) per segnalare un problema.
-2. Fai un Fork del progetto.
-3. Crea un branch per la tua feature (`git checkout -b feature/NuovaFeature`).
-4. Invia una Pull Request.
-
-## 📄 Licenza
-
-Questo progetto è distribuito sotto la licenza MIT - consulta il file [LICENSE](LICENSE) per i dettagli.
+Sviluppato dal team dell'**IIS Torricelli di Milano**, rappresenta una soluzione sperimentale per la logistica e la movimentazione intelligente in ottica **Industria 5.0**.
 
 ---
 
-**Sviluppato da [MPSup3r](https://github.com/MPSup3r)** 👨‍💻
+## 🌟 Visione del Progetto
+L'obiettivo di AUTOSTOKER è dimostrare come robotica ed efficienza energetica possano convergere in una piattaforma modulare. Il robot è capace di supportare attività di:
+- Movimentazione oggetti
+- Monitoraggio ambientale
+- Assistenza ai processi produttivi
+
+---
+
+## 🛠️ Caratteristiche Tecniche
+
+### 🔩 Architettura Meccanica
+- **Struttura Bi-arto:** Due arti mobili indipendenti per massimizzare la stabilità dinamica.
+- **Corpo Centrale:** Alloggiamento protetto per moduli elettronici e batterie.
+- **Sistema di Manipolazione:** Due bracci lineari contrapposti per una presa uniforme e robusta.
+
+### ⚙️ Locomozione Avanzata
+Il robot utilizza un sistema a ruote sdoppiate per ogni "piede":
+- **Ruota Anteriore (Sterzo):** Dedicata esclusivamente al controllo direzionale millimetrico.
+- **Ruota Posteriore (Trazione):** Dedicata alla spinta e alla forza motrice, ottimizzando i consumi.
+
+### 🌱 Sostenibilità (KERS & 3D Printing)
+- Progettato per la **manifattura additiva** (stampa 3D) con plastiche riciclate.
+- Sistema di recupero dell'energia cinetica (**KERS**) in fase di decelerazione.
+- Supporto per moduli solari integrati.
+
+---
+
+## 💻 Architettura Software
+Il sistema di controllo si basa su tre modalità principali:
+1. **Controllo Remoto:** Gestione wireless per manovre di precisione.
+2. **Modalità Automatica:** Navigazione autonoma tramite algoritmi intelligenti.
+3. **Piattaforma Web:** Dashboard gestionale per il monitoraggio dei parametri e la sicurezza operativa.
+
+---
+
+## 👥 Il Team
+Il progetto è il risultato della collaborazione multidisciplinare di:
+
+| Membro | Ruolo | Specializzazione |
+| :--- | :--- | :--- |
+| **Daniele Atienza** | Hardware Designer | Design 3D, Struttura Meccanica |
+| **Manuel Prati** | Software Lead | Programmazione Sistemi di Controllo, Web & UI |
+| **Lorenzo Ebraico** | Hardware Programmer | Elettronica, Sensoristica, Gestione Energetica |
+
+---
+
+## 📂 Struttura della Repository
+```text
+├── index.html          # Pagina principale della piattaforma web
+├── modello.html        # Visualizzazione del modello 3D del robot
+├── galleria.html       # Galleria multimediale del progetto
+├── css/                # Fogli di stile (Design responsive & Dark mode)
+├── js/                 # Logica di controllo e interazione web
+└── assets/             # Immagini, icone e risorse grafiche
